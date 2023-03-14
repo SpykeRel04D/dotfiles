@@ -1,0 +1,28 @@
+#!/usr/bin/env zsh
+
+alias r!="exec zsh -l"
+
+# Git local branch cleaner (except Master)
+alias gbc="git branch | grep -v "master" | xargs git branch -D"
+
+# Lazy Git Pull
+alias gp="git pull"
+
+# Rerun CI by Empty commit
+function ci() {
+  git commit --allow-empty -m "Rerun ci"
+  git push
+}
+
+# Git Pull all projects in a directory (1 subdirectory depth)
+function gpa() {
+  ls | xargs -I{} git -C {} pull
+}
+
+# Git combine add with commit and push
+function gac() {
+  git add .
+  git commit -m "$1"
+  git push
+}
+

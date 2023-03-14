@@ -1,0 +1,7 @@
+[commit]
+    gpgsign = true
+[core]
+    excludesfile = ~/.gitignore
+[user]
+    name = SpykeRel04D
+    email = roger.vidal.lloveras@gmail.com
