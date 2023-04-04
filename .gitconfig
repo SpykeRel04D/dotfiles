@@ -5,3 +5,5 @@
 [user]
     name = SpykeRel04D
     email = roger.vidal.lloveras@gmail.com
+[alias]
+	cf = "!f() { git checkout feature/$1 ; }; f"
