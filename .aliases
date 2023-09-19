@@ -26,3 +26,11 @@ function gac() {
   git push
 }
 
+# Go to main|master branch
+function gcm() {
+  if git branch | grep -q '^[* ]*master$'; then
+      git checkout master
+  else
+      git checkout main
+  fi
+}
