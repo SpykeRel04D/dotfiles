@@ -39,7 +39,7 @@ function gcm() {
 }
 
 # Go to develop|development branch
-function gcm() {
+function gcd() {
   if git branch | grep -q '^[* ]*develop$'; then
       git checkout develop
   else
