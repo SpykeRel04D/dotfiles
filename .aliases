@@ -5,6 +5,9 @@ alias r!="exec zsh -l"
 # When nothing works on docker, this is the best solution
 alias thanos="make build up provision"
 
+# Git delete local branch
+alias gdb="git branch -D $1"
+
 # Git local branch cleaner (except Master)
 alias gbc="git branch | grep -v "master" | xargs git branch -D"
 
