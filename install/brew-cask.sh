@@ -1,8 +1,8 @@
 apps=(
     google-chrome
     iterm2
-	raycast
-    visual-studio-code
+    raycast
+    cursor
 )
 
 brew install "${apps[@]}" --cask
