@@ -1,88 +1,182 @@
 # SpykeRel04D Dotfiles
 
-## Create your SSH key:
+Unified dotfiles configuration for macOS and Linux with a modern development environment.
 
+## ✨ Features
+
+- **Unified Installation**: Single command installation for both macOS and Linux
+- **Modern Shell**: Zsh with Prezto framework and Powerlevel10k theme
+- **Development Tools**: Cursor editor, Node.js, Git with enhanced features
+- **Cross-platform**: Works seamlessly on macOS and Ubuntu/Debian
+- **Fonts**: Nerd Fonts for better icon support
+- **Backup System**: Automatic backup of existing configurations
+
+## 🔑 SSH Key Setup
+
+Before installing, create your SSH key for GitHub access:
+
+### Create SSH Key
 ```bash
-$ ssh-keygen -t ed25519 -C "your_email@example.com"
+ssh-keygen -t ed25519 -C "your_email@example.com"
 ```
 
-## Install
+### Copy SSH Key to Clipboard
 
-### macOS
+**macOS:**
+```bash
+pbcopy < ~/.ssh/id_ed25519.pub
+```
 
-On a sparkling fresh installation of macOS:
+**Linux (Ubuntu/Debian):**
+```bash
+xclip -selection clipboard < ~/.ssh/id_ed25519.pub
+```
 
-    sudo softwareupdate -i -a
-    xcode-select --install
+**Alternative for Linux (if xclip not available):**
+```bash
+cat ~/.ssh/id_ed25519.pub
+# Then manually copy the output
+```
 
-Install the dotfiles with either Git or curl:
+### Add SSH Key to GitHub
+1. Go to GitHub Settings → SSH and GPG keys
+2. Click "New SSH key"
+3. Paste your key from clipboard
+4. Save
 
-#### Clone with Git
+## 🚀 Quick Start
 
-    git clone git@github.com:SpykeRel04D/dotfiles.git
-    source dotfiles/install.sh
+### Prerequisites
 
-### Linux (Ubuntu recommended)
+**macOS:**
+```bash
+# Install Xcode Command Line Tools
+xcode-select --install
+```
 
-On Ubuntu 20.04+ systems:
+**Ubuntu/Debian:**
+```bash
+# Update system
+sudo apt update && sudo apt upgrade -y
+```
 
-    sudo apt update
-    sudo apt install -y git curl
+### Installation
 
-Install the dotfiles:
+1. **Clone the repository:**
+```bash
+git clone git@github.com:SpykeRel04D/dotfiles.git
+cd dotfiles
+```
 
-    git clone git@github.com:SpykeRel04D/dotfiles.git
-    source dotfiles/install/ubuntu-setup.sh
+2. **Run the installer:**
+```bash
+./install.sh
+```
 
-The installer will automatically:
-- Update system packages
-- Install required packages (git, zsh, python3, curl, wget, build-essential, etc.)
-- Install and configure zsh as default shell
-- Install Prezto (Zsh configuration framework)
-- Set up all configuration symlinks
-- Install Node.js (LTS version)
+That's it! The installer will automatically:
+- Detect your operating system
+- Install system dependencies (Homebrew on macOS, apt on Linux)
+- Set up Zsh with Prezto and Powerlevel10k
 - Install Cursor editor
-- Configure git diff-highlight
-- Install Vim with Vundle plugins
-- Backup existing configuration files
+- Configure Git with enhanced features
+- Install Nerd Fonts
+- Create all necessary symlinks
+- Backup existing configurations
 
-**Note**: While other Linux distributions may work, Ubuntu is fully tested and recommended.
+## 🎯 What's Included
 
-## What's included
+### Shell & Terminal
+- **Zsh**: Modern shell with enhanced features
+- **Prezto**: Zsh configuration framework
+- **Powerlevel10k**: Fast and feature-rich prompt theme
+- **Nerd Fonts**: Icons and symbols support
 
-- **Shell**: Zsh with Prezto framework
-- **Editor**: Cursor (AI-powered code editor)
-- **Terminal**: iTerm2 (macOS) / default terminal (Linux)
-- **Vim**: Configured with Vundle and useful plugins
-- **Git**: Configured with aliases and GPG signing
-- **Package Managers**: Homebrew (macOS) / apt (Ubuntu)
+### Development Tools
+- **Cursor**: AI-powered code editor
+- **Node.js**: Latest LTS version
+- **Git**: Enhanced with diff-highlight and useful aliases
+- **Vim**: Configured with Vundle and plugins
 
-## Post-installation steps
+### Package Managers
+- **macOS**: Homebrew for package management
+- **Linux**: apt with additional repositories
 
-After installation on Ubuntu:
+## 🔧 Post-Installation
 
-1. **Restart your terminal** or run `exec zsh` to start using zsh
-2. **Customize Prezto**: Edit `~/.zpreztorc` to change themes and modules
-3. **Add your aliases**: Edit `~/.aliases` for custom commands
-4. **Configure Git**: Check `~/.gitconfig` for your git settings
+After installation:
 
-## Troubleshooting
+1. **Restart your terminal** or run `exec zsh`
+2. **Configure Powerlevel10k** (optional):
+   ```bash
+   p10k configure
+   ```
+3. **Customize your setup**:
+   - Edit `~/.aliases` for custom commands
+   - Edit `~/.exports` for environment variables
+   - Edit `~/.gitconfig` for Git settings
 
-### Ubuntu installation issues
+## 📁 Configuration Files
 
-If you encounter problems during Ubuntu installation:
+- `.zshrc` - Main Zsh configuration
+- `.zpreztorc` - Prezto modules and settings
+- `.p10k.zsh` - Powerlevel10k theme configuration
+- `.aliases` - Custom shell aliases
+- `.exports` - Environment variables
+- `.gitconfig` - Git configuration
+- `.vimrc` - Vim configuration
 
-1. **Check if zsh is installed**: `which zsh`
-2. **Verify Prezto installation**: `ls -la ~/.zprezto`
-3. **Check symlinks**: `ls -la ~/.zshrc ~/.zpreztorc`
-4. **Restart terminal**: Close and reopen your terminal application
+## 🛠️ Troubleshooting
 
-### Backup files
+### Common Issues
 
-The installer creates backups of existing configuration files in `~/.dotfiles_backup_YYYYMMDD_HHMMSS/` if any conflicts are found.
+**Powerlevel10k not showing:**
+```bash
+# Reinstall Powerlevel10k
+rm -rf ~/.zprezto/modules/prompt/external/powerlevel10k
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.zprezto/modules/prompt/external/powerlevel10k
+```
 
-## Customize/extend
+**Fonts not displaying correctly:**
+- macOS: Install fonts via Homebrew cask
+- Linux: Run `fc-cache -fv` after font installation
 
-Alternatively, you can have an additional, personal dotfiles repo at `~/.extra`.
+**Cursor not found:**
+```bash
+# macOS
+brew install --cask cursor
 
--   The installer (`install.sh`) will run `~/.extra/install.sh`.
+# Linux
+wget -O /tmp/cursor.deb https://download.cursor.sh/linux/deb/x64
+sudo dpkg -i /tmp/cursor.deb
+sudo apt-get install -f -y
+```
+
+### Backup Files
+
+The installer creates backups of existing files in `~/.dotfiles_backup_YYYYMMDD_HHMMSS/` if conflicts are found.
+
+## 🔄 Updating
+
+To update your dotfiles:
+
+```bash
+cd ~/dotfiles
+git pull origin master
+./install.sh
+```
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Test on both macOS and Linux
+5. Submit a pull request
+
+## 📝 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+---
+
+**Note**: This setup is optimized for development work and includes tools commonly used in modern development workflows. Feel free to customize it to your needs!

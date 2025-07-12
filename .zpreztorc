@@ -19,3 +19,6 @@ zstyle ':prezto:load' pmodule \
 
 # Set the key mapping style to 'emacs' or 'vi'.
 zstyle ':prezto:module:editor' key-bindings 'emacs'
+
+# Set the prompt theme to powerlevel10k
+zstyle ':prezto:module:prompt' theme 'powerlevel10k'

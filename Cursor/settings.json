@@ -1,113 +1,74 @@
 {
-    "editor.detectIndentation": false,
-    "tabnine.experimentalAutoImports": true,
-    "gitlens.advanced.messages": {
-        "suppressGitDisabledWarning": true
-    },
-    "terminal.integrated.automationShell.windows": "",
-    "terminal.integrated.shellArgs.windows": [
-        "-ExecutionPolicy",
-        "Bypass"
-    ],
-    "prettier.tabWidth": 4,
-    "prettier.useTabs": true,
-    "mssql.connections": [
-        {
-            "server": "{{put-server-name-here}}",
-            "database": "{{put-database-name-here}}",
-            "user": "{{put-username-here}}",
-            "password": "{{put-password-here}}"
-        }
-    ],
-    "liveSassCompile.settings.formats": [
-        {
-            "format": "compressed",
-            "extensionName": ".min.css",
-            "savePath": "/dist/css"
-        }
-    ],
-    "liveServer.settings.donotShowInfoMsg": true,
-    "workbench.iconTheme": "material-icon-theme",
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "prettier.printWidth": 180,
-    "liveServer.settings.donotVerifyTags": true,
-    "editor.renderWhitespace": "all",
-    "stylelint.packageManager": "yarn",
-    "yaml.schemas": {
-        "file:///Users/a038/.vscode/extensions/atlassian.atlascode-2.9.1/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
-    },
-    "redhat.telemetry.enabled": true,
-    "workbench.colorTheme": "Cyberpunk",
-    "terminal.external.osxExec": "iTerm.app",
-    "editor.bracketPairColorization.enabled": true,
-    "explorer.compactFolders": false,
-    "diffEditor.ignoreTrimWhitespace": false,
-    "php.validate.executablePath": "/opt/homebrew/etc/php/8.1/",
-    "editor.largeFileOptimizations": false,
-    "editor.insertSpaces": false,
-    "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
-    "editor.codeActionsOnSave": {
-        "source.fixAll.eslint": "explicit",
-        "source.fixAll.stylelint": "explicit"
-    },
-    "cSpell.userWords": [
-        "draftjs",
-        "fontfaceobserver"
-    ],
-    "prettier.trailingComma": "none",
-    "npm.keybindingsChangedWarningShown": true,
-    "editor.inlineSuggest.enabled": true,
-    "material-icon-theme.folders.associations": {
-        "domain": "Content",
-        "infrastructure": "Server",
-        "ui": "Theme",
-        "application": "Client",
-        "mock-server": "Server",
-        "features": "Taskfile"
-    },
-    "editor.formatOnSave": true,
-    "nxConsole.showNodeVersionOnStartup": false,
-    "githubPullRequests.pullBranch": "never",
-    "[yaml]": {
-        "editor.autoIndent": "advanced"
-    },
-    "[yml]": {
-        "editor.autoIndent": "advanced"
-    },
-    "prettier.requireConfig": true,
-    "eslint.format.enable": true,
-    "git.openRepositoryInParentFolders": "never",
-    "github.copilot.editor.enableAutoCompletions": true,
-    "workbench.tree.enableStickyScroll": false,
-    "editor.stickyScroll.scrollWithEditor": false,
-    "search.exclude": {
-        "**/node_modules": false,
-        "**/node_modules/**": true
-    },
-    "material-icon-theme.folders.customClones": [],
-    "files.exclude": {
-        "**/.next": true
-    },
-    "javascript.updateImportsOnFileMove.enabled": "never",
-    "github.copilot.selectedCompletionModel": "gpt-4o-copilot",
-    "makefile.configureOnOpen": false,
-    "typescript.preferences.importModuleSpecifier": "non-relative",
-    "javascript.preferences.importModuleSpecifier": "non-relative",
-    "workbench.editor.empty.hint": "hidden",
-    "colorize.decoration_type": "square-dot",
-    "files.associations": {
-        "*.twig": "twig"
-	},
-	"cursor.cpp.disabledLanguages": [
-		"plaintext",
-		"markdown",
-		"scminput"
-	],
-	"github.copilot.enable": {
-		"*": false,
-		"plaintext": false,
-		"markdown": false,
-		"scminput": false
-	},
-	"docker.extension.enableComposeLanguageServer": false
+  "editor.fontFamily": "'Hack Nerd Font', 'FiraCode Nerd Font', 'Cascadia Code', 'Consolas', 'Courier New', monospace",
+  "editor.fontSize": 14,
+  "editor.fontLigatures": true,
+  "editor.lineHeight": 1.5,
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "editor.detectIndentation": true,
+  "editor.wordWrap": "on",
+  "editor.minimap.enabled": false,
+  "editor.renderWhitespace": "boundary",
+  "editor.rulers": [80, 120],
+  "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs": true,
+  "editor.suggestSelection": "first",
+  "editor.acceptSuggestionOnEnter": "on",
+  "editor.quickSuggestions": {
+    "other": true,
+    "comments": false,
+    "strings": true
+  },
+  "workbench.colorTheme": "One Dark Pro",
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.startupEditor": "newUntitledFile",
+  "workbench.editor.enablePreview": false,
+  "workbench.editor.enablePreviewFromQuickOpen": false,
+  "files.autoSave": "onFocusChange",
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "terminal.integrated.fontFamily": "'Hack Nerd Font', 'FiraCode Nerd Font', 'Cascadia Code', 'Consolas', 'Courier New', monospace",
+  "terminal.integrated.fontSize": 13,
+  "terminal.integrated.lineHeight": 1.2,
+  "terminal.integrated.cursorBlinking": true,
+  "terminal.integrated.cursorStyle": "line",
+  "git.enableSmartCommit": true,
+  "git.confirmSync": false,
+  "git.autofetch": true,
+  "git.autofetchPeriod": 180,
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact",
+    "typescript": "typescriptreact"
+  },
+  "emmet.triggerExpansionOnTab": true,
+  "typescript.preferences.importModuleSpecifier": "relative",
+  "javascript.preferences.importModuleSpecifier": "relative",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "**/*.code-search": true,
+    "**/dist": true,
+    "**/build": true,
+    "**/.git": true
+  },
+  "files.exclude": {
+    "**/.git": true,
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true,
+    "**/node_modules": true,
+    "**/dist": true,
+    "**/build": true
+  },
+  "extensions.autoUpdate": true,
+  "extensions.ignoreRecommendations": false,
+  "window.zoomLevel": 0,
+  "window.menuBarVisibility": "toggle",
+  "breadcrumbs.enabled": true,
+  "breadcrumbs.filePath": "on",
+  "breadcrumbs.symbolPath": "on"
 }
